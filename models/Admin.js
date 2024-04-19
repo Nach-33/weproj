@@ -9,10 +9,12 @@ const AdminSchema = mongoose.Schema(
     handle: {
       type: String,
       required: true,
+      unique: true
     },
     email: {
       type: String,
       required: true,
+      unique: true
     },
     contests_created: [
       {

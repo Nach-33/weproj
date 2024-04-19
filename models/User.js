@@ -9,6 +9,7 @@ const UserSchema = mongoose.Schema(
     email: {
       type: String,
       required: true,
+      unique: true
     },
     profile_pic: {
       type: String,
@@ -16,6 +17,7 @@ const UserSchema = mongoose.Schema(
     handle: {
       type: String,
       required: true,
+      unique: true
     },
     rating: {
       type: Number,

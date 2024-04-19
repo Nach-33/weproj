@@ -26,7 +26,7 @@ exports.checkAuthorizationHeaders = [
 ];
 
 exports.authenticateAdmin = asyncHandler(async (req, res, next) => {
-  const admin_doc = Admin.findOne(
+  const admin_doc = await Admin.findOne(
     { _id: req.access_token.id },
     { _id: 1, name: 1 }
   );

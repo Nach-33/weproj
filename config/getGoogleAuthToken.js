@@ -54,8 +54,8 @@ exports.adminRegisterLogin = asyncHandler(async (req, res) => {
   const admin = await Admin.create({
     name: googleUser.name,
     handle: googleUser.given_name
-      ? googleUser.given_name
-      : googleUser.name.split(" ").join("_"),
+      ? googleUser.given_name + Date.now()
+      : googleUser.name.split(" ").join("_") + Date.now(),
     email: googleUser.email,
   });
 

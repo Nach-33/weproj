@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const errorHandler = require("./middlewares/errorHandler")
 const dbConnect = require("./db/connect");
 require("dotenv").config();
 
@@ -9,6 +10,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api", require("./routes"));
+
+app.use(errorHandler)
 
 const PORT = process.env.PORT;
 const MONGO_URI = process.env.MONGO_URI;
